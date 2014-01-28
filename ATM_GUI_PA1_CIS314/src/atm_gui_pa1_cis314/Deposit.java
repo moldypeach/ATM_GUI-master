@@ -10,7 +10,7 @@
  * represents a deposit ATM transaction. Its purpose is to accept a user depos-
  * it and update the appropiate account in the BankDatabase. If a user indicates
  * a deposit option, Deposit halts the program until a Deposit envelope is det-
- * ected.
+ * ected or 15 seconds lapses without a deposit, which cancels the transaction.
  */
 
 package atm_gui_pa1_cis314;
@@ -53,11 +53,13 @@ public class Deposit extends Transaction
             screen.displayMessage( "." );
             screen.pause( 3 );
             
-            // halt program until user deposits cash
-            while ( !envelopeReceived )
+            // halt program until user deposits cash or 15 seconds has lapsed
+            int secondCounter = 15;
+            while ( !envelopeReceived && secondCounter > 0 )
             {
-                screen.pause( 2 );
+                screen.pause( 1 );  // check every second for deposit
                 envelopeReceived = depositSlot.getDepositCompleted();
+                secondCounter--;
             }
             depositSlot.setDepositCompleted();
             
