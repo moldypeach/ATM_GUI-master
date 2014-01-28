@@ -1,5 +1,20 @@
-/* Keypad.java
- * Represents the keypad of the ATM
+/* Filename:        Keypad.java
+ * Last Modified:   28 Jan 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS314 - Advanced Java
+ * 
+ * NOTE: Code was adopted from "Java - How To Program" by Deitel and Deitel
+ * 
+ * Keypad simulates the keypad of the ATM. It is what allows user input to be
+ * received into the program via ActionEvents fired by their respective keypad
+ * clicks (e.g. Enter, Clear, 0-9). The actual keypad JPanel is created within
+ * this class and returned to calling classes (ATM) via an Accessor method.
+ * Method getInput() sleeps the main thread until an ActionEvent sets input to
+ * greater than 0, returns the valid input to calling class, then resets input
+ * to -1. Keypad maintains a Screen object such that the a user can clear only
+ * the numbers they've typed, and, so the keys typed (0-9) may be displayed on
+ * the ATM Screen as they are entered.
  */
 
 package atm_gui_pa1_cis314;
@@ -8,12 +23,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.event.KeyAdapter;
-import java.awt.event.MouseAdapter;
 import java.awt.GridLayout; // reference page 613
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.JComponent;
 
 public class Keypad extends JPanel
 {
@@ -52,7 +64,7 @@ public class Keypad extends JPanel
         // handle button events
         public void actionPerformed( ActionEvent event )
         {
-            // don't process command without first receiving input
+            // don't process enter command without first receiving input
             if ( event.getActionCommand().equalsIgnoreCase("Enter"))
             {
                 if ( !response.equalsIgnoreCase( "" ) )
@@ -61,15 +73,16 @@ public class Keypad extends JPanel
 
                 }                
             }
+            // if there is user input, then clear response variable and user input printed to screen
             else if ( event.getActionCommand().equalsIgnoreCase("Clear") )
             {    
-                // if there is user input, then clear response variable and user input printed to screen
-                if ( !response.equalsIgnoreCase( "" ) );
+                if ( !response.equalsIgnoreCase( "" ) )
                 {
                     screen.clearScreenText( response );
                     response = "";
                 }
             } // end else if
+            //  User clicked keys 0-9, save keyclicks
             else
             {
                 String temp = "";
@@ -88,6 +101,7 @@ public class Keypad extends JPanel
         return keyPanel;
     } // end method getPanel()
     
+    // Sleep thread until ActionEvent detects valid input to return
     public int getInput()
     {
         while ( input == -1)

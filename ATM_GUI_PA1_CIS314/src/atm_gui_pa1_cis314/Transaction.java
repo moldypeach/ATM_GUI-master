@@ -1,5 +1,15 @@
-/* Transaction.java
- *  Abstract superclass Transaction represents an ATM transaction
+/* Filename:        Transaction.java
+ * Last Modified:   28 Jan 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS314 - Advanced Java
+ * 
+ * NOTE: Code was adopted from "Java - How To Program" by Deitel and Deitel
+ * 
+ *  Abstract superclass Transaction represents an ATM transaction. This class
+ * serves only to allow polymorphic capabilities for each concrete class to
+ * maintain their own versions of Transaction's fields and execute() method.
+ * Concrete implementations are: Withdrawl, Deposit, and BalanceInquiry.
  */
 
 package atm_gui_pa1_cis314;

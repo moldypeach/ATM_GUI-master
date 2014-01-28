@@ -1,5 +1,16 @@
-/* BankDatabase.java
- * Represents the bank account information database
+/* Filename:        BankDatabase.java
+ * Last Modified:   28 Jan 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS314 - Advanced Java
+ * 
+ * NOTE: Code was adopted from "Java - How To Program" by Deitel and Deitel
+ * 
+ * BankDatabase represents the bank account information database and holds the
+ * information for two predefined user accounts. This class calls on methods
+ * from an Account object to determine if an account exists and to authenticate
+ * user provided information. Accessors and Mutators serve as utility methods
+ * for other classes in order to maintain a user's account information.
  */
 
 package atm_gui_pa1_cis314;

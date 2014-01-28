@@ -1,23 +1,31 @@
-/* ATM.java
- * Represents an automated teller machine
+/* Filename:        ATM.java
+ * Last Modified:   28 Jan 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS314 - Advanced Java
+ * 
+ * NOTE: Code was adopted from "Java - How To Program" by Deitel and Deitel
+ * 
+ * This class represents the ATM system. Method run() is called by the program, 
+ * which runs in an infinite loop to simulate an "always-on" ATM. run() calls
+ * authenticateUser() and then performTransactions(); which, conduct the operat-
+ * ions as described by their respective names. Method initFrame(), called in
+ * the constructor, sets up the ATM's GUI components. Various ATM hardware comp-
+ * onents are simulated by objects Keypad, Screen, DepositSlot, CashDispenser.
  */
 
 package atm_gui_pa1_cis314;
 
-//import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Component;
 import java.awt.Color;
-//import java.awt.GridLayout;
-import java.awt.Dimension;
 import java.awt.Insets;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.BorderFactory;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
 public class ATM extends JFrame
@@ -29,7 +37,6 @@ public class ATM extends JFrame
     private CashDispenser cashDispenser; // ATM's cash dispenser
     private DepositSlot depositSlot; // ATM's deposit slot
     private BankDatabase bankDatabase; // account information database
-//    private JPanel cashSlotPanels; // ATM's panel to hold withdrawal and deposit slots
     private GridBagLayout layout; // layout of frame
     private GridBagConstraints constraints; // Constraints of layout
     private Student_Sig_Block sig; // create signature block object
@@ -44,7 +51,7 @@ public class ATM extends JFrame
     public ATM()
     {
         super( "ATM with GUI" );
-        sig = new Student_Sig_Block();
+        sig = new Student_Sig_Block(); // sig object initialization
         userAuthenticated = false; // user is not authenticated to start
         currentAccountNumber = 0; // no current account number to start
         screen = new Screen(); // create screen
@@ -52,7 +59,7 @@ public class ATM extends JFrame
         cashDispenser = new CashDispenser(); // create cash dispenser
         depositSlot = new DepositSlot(); // create deposit slot
         bankDatabase = new BankDatabase(); // create acct info database
-        initFrame();        
+        initFrame();  // initialize GUI
     } // end no-argument ATM constructor
     
     // start ATM
@@ -98,7 +105,7 @@ public class ATM extends JFrame
             screen.resetDisplay(); // clear screen
             screen.displayMessageLine( "Invalid account number or PIN. Please try again." );
             screen.pause( 3 );
-            screen.resetDisplay(); // clear screen (called twice to welcome can display after error)
+            screen.resetDisplay(); // clear screen (called twice so welcome can redisplay after an error)
         } // end else
     } // end method authenticateUser
     
@@ -176,6 +183,7 @@ public class ATM extends JFrame
         return temp; // return the newly created object
     } // end method createTransaction
     
+    // Setup the GUI components
     public void initFrame()
     {
         // Initialize layout
@@ -250,7 +258,7 @@ public class ATM extends JFrame
         
         ATM.this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         ATM.this.getContentPane().setBackground( Color.LIGHT_GRAY );
-        ATM.this.setSize( 1024, 768 ); // set frame size
+        ATM.this.setSize( 800, 600 ); // set frame size
         ATM.this.setResizable( false );        
         ATM.this.setVisible( true ); // display frame
 //        ATM.this.pack();

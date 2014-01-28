@@ -1,23 +1,35 @@
-/* Screen.java
+/* Filename:        Screen.java
+ * Last Modified:   28 Jan 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS314 - Advanced Java
+ * 
+ * NOTE: Code was adopted from "Java - How To Program" by Deitel and Deitel
+ * 
+ * Screen represents the ATM's display screen and utilizes a series of methods
+ * maintain the screen. Method clearScreenText() deletes the string passed to it
+ * from the screen, resetDisplay() clears the entire screen, getScreen() returns
+ * a Screen object, and pause() is used to temporarily halt the ATM operations.
+ * pause() is necessary in order to allow for calling classes to ensure a user
+ * has ample time to read displayed messages, and to ensure a user has deposited
+ * an envelope or received their cash. The value recieved by pause is in mili-
+ * seconds, but is multipled by 1000 so that calling classes need only input
+ * values as seconds to pause. The display methods are self-explanitory via
+ * their naming, and they simulate the Screen itself via their operations.
  */
 
 package atm_gui_pa1_cis314;
 
 import java.awt.Color;
 import javax.swing.JTextArea;
-//import javax.swing.JPanel;
-//import javax.swing.JScrollPane;
 
 public class Screen
 {
     private JTextArea textArea; // textarea to display output
-//    private JPanel displayPanel;
-//    private JScrollPane scrollPane;
     
     // no-argument constructor to create JPanel
     public Screen()
     {
-//        displayPanel = new JPanel();
         textArea = new JTextArea();
         textArea.setEditable( false );
         textArea.setLineWrap( true );
@@ -26,9 +38,6 @@ public class Screen
         textArea.setBackground( Color.BLACK );
         textArea.setForeground( Color.GREEN );
         textArea.setFocusable( false );
-//        scrollPane = new JScrollPane( textArea );
-//        displayPanel.add( new JScrollPane( textArea ) );
-//        displayPanel.add( textArea );
     } // end Screen constructor 
     
     // get method to return panel object
@@ -51,7 +60,6 @@ public class Screen
     public void displayMessage( String message )
     {
         textArea.append( message );
-//        textArea.setText( message );
     } // end method displayMessage
     
     // display a message with a carriage return

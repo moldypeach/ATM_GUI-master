@@ -1,5 +1,16 @@
-/* BalanceInquiry.java
- * Represents a balance inquiry ATM transaction
+/* Filename:        BalanceInquiry.java
+ * Last Modified:   28 Jan 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS314 - Advanced Java
+ * 
+ * NOTE: Code was adopted from "Java - How To Program" by Deitel and Deitel
+ * 
+ * Represents a balance inquiry ATM transaction. BalanceInquiry is a concrete
+ * implementation of the abstract Transaction class. The execute() method gets a
+ * reference from the appropiate simulated database account, and prints the user
+ * requested information ( e.g. available balance or total balance ) to the 
+ * screen
  */
 
 package atm_gui_pa1_cis314;

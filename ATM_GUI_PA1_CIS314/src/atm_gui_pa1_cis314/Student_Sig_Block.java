@@ -1,9 +1,10 @@
-/**
- *Course:       CIS214 Intro to Java
- *Assignment:   Programming Assignment #1
- *Author:       Todd Parker
- *Date:         11 Sep 2013
- *Filename:     Student_Sig_Block.java
+/* Filename:        Student_Sig_Block.java
+ * Last Modified:   28 Jan 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS314 - Advanced Java
+ * 
+ * NOTE: Adapted from CIS214
  */
 package atm_gui_pa1_cis314;
 

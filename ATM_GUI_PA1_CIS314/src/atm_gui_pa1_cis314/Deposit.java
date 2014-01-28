@@ -1,5 +1,17 @@
-// Deposit.java
-// Represents a deposit ATM transaction
+/* Filename:        Deposit.java
+ * Last Modified:   28 Jan 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS314 - Advanced Java
+ * 
+ * NOTE: Code was adopted from "Java - How To Program" by Deitel and Deitel
+ * 
+ * Deposit is a concrete implementation of the absctract class Transaction that
+ * represents a deposit ATM transaction. Its purpose is to accept a user depos-
+ * it and update the appropiate account in the BankDatabase. If a user indicates
+ * a deposit option, Deposit halts the program until a Deposit envelope is det-
+ * ected.
+ */
 
 package atm_gui_pa1_cis314;
 

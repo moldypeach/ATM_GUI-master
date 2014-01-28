@@ -1,5 +1,16 @@
-/* Account.java
- * Represents a bank account
+/* Filename:        Account.java
+ * Last Modified:   28 Jan 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS314 - Advanced Java
+ * 
+ * NOTE: Code was adopted from "Java - How To Program" by Deitel and Deitel
+ * 
+ * This class is used to represent a user account. Account objects each maint-
+ * ain the account number, pin, available balance, and total balance for each
+ * object created.  Accessor and Mutator methods are provided for each of the 
+ * fields, and also a method validatePIN serves to authenticate a user ( i.e. 
+ * each Account objects knows the validity of its own account information )
  */
 
 package atm_gui_pa1_cis314;

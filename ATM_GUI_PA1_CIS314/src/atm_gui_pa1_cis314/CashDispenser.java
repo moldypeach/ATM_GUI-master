@@ -1,5 +1,16 @@
-/* CashDispenser.java
- * Represents the cash dispenser of the ATM
+/* Filename:        CashDispenser.java
+ * Last Modified:   28 Jan 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS314 - Advanced Java
+ * 
+ * NOTE: Code was adopted from "Java - How To Program" by Deitel and Deitel
+ * 
+ * Represents the cash dispenser of the ATM. CashDispenser merely ensures that
+ * the ATM has enough bills ( default 500 ) to dispense case for a user, and
+ * also maintains its own state information in regards to the dispensing of cash
+ * (e.g. until an action simulating a user's retrieval of cash is detected, the
+ * program is halted). 
  */
 
 package atm_gui_pa1_cis314;
@@ -32,8 +43,10 @@ public class CashDispenser extends JButton
         // handle button event
         public void actionPerformed( ActionEvent event )
         {
-            if ( event.getActionCommand().equalsIgnoreCase( "Take cash here" ) )    
+            if ( event.getActionCommand().equalsIgnoreCase( "Take cash here" ) )
+            {
                 cashTaken = true;
+            }
         } // end actionPerformed method
     } // end private class CashDispenserHandler
     

@@ -1,5 +1,17 @@
-/* Withdrawl.java
- * Represents a withdrawl ATM transaction
+/* Filename:        Withdrawal.java
+ * Last Modified:   28 Jan 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS314 - Advanced Java
+ * 
+ * NOTE: Code was adopted from "Java - How To Program" by Deitel and Deitel
+ * 
+ * Withdrawal represents a withdrawl ATM transaction, and is a concrete imple-
+ * mentation of abstract class Transaction. It displays a withdrawal menu to an
+ * ATM user, interacts with CasDispenser to determine available ATM bills, and 
+ * interactions with BankDatabase to determine if sufficient user funds are
+ * available. The ATM is halted upon withdrawal until detection of cash receiv-
+ * ed by CashDispenser.
  */
 
 package atm_gui_pa1_cis314;
@@ -57,7 +69,6 @@ public class Withdrawal extends Transaction
                         bankDatabase.debit( getAccountNumber() , amount );
 
                         cashDispenser.dispenseCash( amount ); // dispense case
-//                        cashDispensed = true; // cash was dispensed
 
                         // instruct user to take cash
                         screen.resetDisplay(); // clear screen

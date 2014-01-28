@@ -1,5 +1,15 @@
-/* DepositSlot.java
- * Represents the deposit slot of the ATM
+/* Filename:        DepositSlot.java
+ * Last Modified:   28 Jan 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS314 - Advanced Java
+ * 
+ * NOTE: Code was adopted from "Java - How To Program" by Deitel and Deitel
+ * 
+ * Represents the deposit slot of the ATM. The only purpose of DepositSlot is
+ * to simulate the deposit slot of the ATM and to wait until a user as deposit-
+ * ed an envelope to continue. The program is halted until such an action is
+ * detected; which, is similar to the process of CashDispenser.
  */
 
 package atm_gui_pa1_cis314;
