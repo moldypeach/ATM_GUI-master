@@ -20,6 +20,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Component;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Insets;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -193,8 +194,11 @@ public class ATM extends JFrame
         
         // Create GUI Components
         JPanel keypadPanel = new JPanel(); // ATM's panel to hold the keypad
-        JPanel fillerPanel = new JPanel(); // empty panel
         JPanel fillerPanel1 = new JPanel(); // empty panel
+        JPanel fillerPanel2 = new JPanel(); // empty panel
+        JPanel fillerPanel3 = new JPanel(); // empty panel
+        JPanel fillerPanel4 = new JPanel(); // empty panel
+        JPanel fillerPanel5 = new JPanel(); // empty panel        
         JButton cashDispenserButton = new JButton(); // ATM's cash dispenser
         JButton depositSlotButton = new JButton(); // ATM's deposit slot
         JTextArea screenArea = new JTextArea(); // ATM's screen
@@ -204,62 +208,87 @@ public class ATM extends JFrame
         screenArea = screen.getScreen();
         screenArea.setBorder( BorderFactory.createCompoundBorder( new EmptyBorder( 5,5,5,5), BorderFactory.createLineBorder( Color.DARK_GRAY, 4, false )) );
         constraints.fill = GridBagConstraints.BOTH;
-        constraints.weightx = 0.3;
+        constraints.weightx = 0.6;
         constraints.weighty = 0.3;
         addComponent( screenArea, 0, 0, 3, 1);
         
         // Signature Block
-        sigBlock.setBackground( Color.LIGHT_GRAY );
-        sigBlock.setForeground( Color.BLACK );
+        sigBlock.setBackground( new Color(67, 67, 67) );
+        sigBlock.setForeground( Color.WHITE );
+        sigBlock.setFont( new Font("Arial", Font.BOLD, 14) );
+        sigBlock.setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder( new Color(38, 38, 38), 4, false ), new EmptyBorder( 10,10,10,10) ) );
         sigBlock.setRows( 7 );
         sigBlock.setColumns( 40 );
         sigBlock.setMargin( new Insets(10,10,10,10) );
-        constraints.fill = GridBagConstraints.HORIZONTAL;
-        constraints.weightx = 0.3;
+        constraints.fill = GridBagConstraints.BOTH;
+        constraints.weightx = 0;
         constraints.weighty = 0;
-        addComponent( sigBlock, 0, 3, 1, 1 );     
+        addComponent( sigBlock, 0, 3, 1, 1 );
+        
+        // Filler Panel (bottom, left vertical)
+        fillerPanel1.setBackground( new Color(38, 38, 38) );
+        fillerPanel1.setBorder( BorderFactory.createCompoundBorder( new EmptyBorder( 0,0,0,15) ,  BorderFactory.createMatteBorder( 0 ,  0 ,  0 , 10, new Color(18, 18, 18) ) ) );        
+        constraints.fill = GridBagConstraints.BOTH;
+        constraints.weightx = 0.05;
+        constraints.weighty = 0;        
+        addComponent( fillerPanel1, 1, 0, 1, 5);
+        
+        // Filler pane2 (bottom, top-middle horizontal)
+        fillerPanel2.setBackground( new Color(38, 38, 38) );
+        constraints.fill = GridBagConstraints.BOTH;
+        constraints.weightx = 0.25;
+        constraints.weighty = 0.15;
+        addComponent( fillerPanel2, 1, 1, 1, 1);        
         
         // ATM Cash Dispenser
         cashDispenserButton = cashDispenser.getDispenserButton();
         constraints.fill = GridBagConstraints.BOTH;
         constraints.weightx = 0;
-        constraints.weighty = 0.2;
-        addComponent( cashDispenserButton, 1, 0, 2, 1);
+        constraints.weighty = 0.125;
+        addComponent( cashDispenserButton, 2, 1, 1, 1);
         
-        // Filler panel
-        fillerPanel1.setBackground( Color.LIGHT_GRAY );
+        // Filler pane3 (bottom, bottom-middle horizontal)
+        fillerPanel3.setBackground( new Color(38, 38, 38) );
         constraints.fill = GridBagConstraints.BOTH;
         constraints.weightx = 0;
-        constraints.weighty = 0.3;
-        addComponent( fillerPanel1, 2, 0, 2, 2);
+        constraints.weighty = 0.15;
+        addComponent( fillerPanel3, 3, 1, 1, 1);
         
         // ATM Deposit Slot
         depositSlotButton = depositSlot.getDepositButton();
         constraints.fill = GridBagConstraints.BOTH;
-        constraints.weightx = 0.2;
-        constraints.weighty = 0.2;        
-        addComponent( depositSlotButton, 4, 0, 2, 1);
+        constraints.weightx = 0;
+        constraints.weighty = 0.125;        
+        addComponent( depositSlotButton, 4, 1, 1, 1);
         
-        // Filler Panel
-        fillerPanel.setBackground( Color.LIGHT_GRAY );
+        // Filler panel4 (bottom, bottom-middle horizontal)
+        fillerPanel4.setBackground( new Color(38, 38, 38) );
         constraints.fill = GridBagConstraints.BOTH;
-        constraints.weightx = 0.2;
+        constraints.weightx = 0;
+        constraints.weighty = 0.15;
+        addComponent( fillerPanel4, 5, 1, 1, 1);        
+        
+        // Filler Panel5 (bottom, right vertical)
+        fillerPanel5.setBackground( new Color(38, 38, 38) );
+        fillerPanel5.setBorder( BorderFactory.createCompoundBorder( new EmptyBorder( 0,15,0,0) ,  BorderFactory.createMatteBorder( 0 ,  10 ,  0 ,  0 , new Color(18, 18, 18)) ) );
+        constraints.fill = GridBagConstraints.BOTH;
+        constraints.weightx = 0.3;
         constraints.weighty = 0;        
-        addComponent( fillerPanel, 1, 2, 1, 4);
+        addComponent( fillerPanel5, 1, 2, 1, 5);
         
         // ATM Keypad
         keypadPanel = keypad.getPanel();
         keypadPanel.setBorder( BorderFactory.createCompoundBorder( new EmptyBorder( 5,5,5,5), BorderFactory.createLineBorder( Color.GRAY, 4, false )));
-        keypadPanel.setBackground( Color.LIGHT_GRAY );
+        keypadPanel.setBackground( new Color(38, 38, 38) );
         constraints.fill = GridBagConstraints.BOTH;
-        constraints.weightx = 0;
+        constraints.weightx = 0.4;
         constraints.weighty = 0;
-        addComponent(keypadPanel, 1, 3, 1, 4);        
+        addComponent(keypadPanel, 1, 3, 1, 5);        
         
         ATM.this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-        ATM.this.getContentPane().setBackground( Color.LIGHT_GRAY );
-        ATM.this.setSize( 800, 600 ); // set frame size
-        ATM.this.setResizable( false );        
+        ATM.this.getContentPane().setBackground( Color.BLACK );
+        ATM.this.setSize( 1024, 768 ); // set frame size
+        ATM.this.setResizable( true );        
         ATM.this.setVisible( true ); // display frame
 //        ATM.this.pack();
     } // end initFrame

@@ -34,7 +34,7 @@ public class Screen
         textArea.setEditable( false );
         textArea.setLineWrap( true );
         textArea.setColumns( 70 );
-        textArea.setRows( 10 );
+        textArea.setRows( 9 );
         textArea.setBackground( Color.BLACK );
         textArea.setForeground( Color.GREEN );
         textArea.setFocusable( false );
