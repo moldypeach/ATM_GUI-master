@@ -226,8 +226,8 @@ public class ATM extends JFrame
         addComponent( sigBlock, 0, 3, 1, 1 );
         
         // Filler Panel (bottom, left vertical)
-        fillerPanel1.setBackground( new Color(38, 38, 38) );
-        fillerPanel1.setBorder( BorderFactory.createCompoundBorder( new EmptyBorder( 0,0,0,15) ,  BorderFactory.createMatteBorder( 0 ,  0 ,  0 , 10, new Color(18, 18, 18) ) ) );        
+        fillerPanel1.setBackground( new Color(67, 67, 67) );
+        fillerPanel1.setBorder( BorderFactory.createCompoundBorder( new EmptyBorder( 0,0,0,1) ,  BorderFactory.createCompoundBorder( BorderFactory.createMatteBorder( 0 ,  0 ,  0 ,  10 , new Color(38, 38, 38) ), BorderFactory.createMatteBorder( 0 ,  0 ,  0 ,  2 , Color.LIGHT_GRAY ) ) ) );        
         constraints.fill = GridBagConstraints.BOTH;
         constraints.weightx = 0.05;
         constraints.weighty = 0;        
@@ -247,8 +247,9 @@ public class ATM extends JFrame
         constraints.weighty = 0.125;
         addComponent( cashDispenserButton, 2, 1, 1, 1);
         
-        // Filler pane3 (bottom, bottom-middle horizontal)
+        // Filler panel3 (bottom, bottom-middle horizontal)
         fillerPanel3.setBackground( new Color(38, 38, 38) );
+        fillerPanel3.setBorder( BorderFactory.createCompoundBorder( new EmptyBorder( 60,0,0,0) , BorderFactory.createCompoundBorder( BorderFactory.createMatteBorder( 1 ,  0 ,  0 ,  0 , new Color(255, 255, 255)) ,  BorderFactory.createMatteBorder( 10 ,  0 ,  0 ,  0 , new Color(18, 18, 18)) )  ));        
         constraints.fill = GridBagConstraints.BOTH;
         constraints.weightx = 0;
         constraints.weighty = 0.15;
@@ -269,8 +270,8 @@ public class ATM extends JFrame
         addComponent( fillerPanel4, 5, 1, 1, 1);        
         
         // Filler Panel5 (bottom, right vertical)
-        fillerPanel5.setBackground( new Color(38, 38, 38) );
-        fillerPanel5.setBorder( BorderFactory.createCompoundBorder( new EmptyBorder( 0,15,0,0) ,  BorderFactory.createMatteBorder( 0 ,  10 ,  0 ,  0 , new Color(18, 18, 18)) ) );
+        fillerPanel5.setBackground( new Color(67, 67, 67) );
+        fillerPanel5.setBorder( BorderFactory.createCompoundBorder( new EmptyBorder( 0,1,0,0) ,  BorderFactory.createCompoundBorder( BorderFactory.createMatteBorder( 0 ,  10 ,  0 ,  0 , new Color(38, 38, 38)), BorderFactory.createMatteBorder( 0 ,  2 ,  0 ,  0, Color.LIGHT_GRAY) ) ) );
         constraints.fill = GridBagConstraints.BOTH;
         constraints.weightx = 0.3;
         constraints.weighty = 0;        

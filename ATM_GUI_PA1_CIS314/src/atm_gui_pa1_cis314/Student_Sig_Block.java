@@ -16,7 +16,7 @@ public class Student_Sig_Block
     {
         // Declare variables to create ascii border for signature block
         String border = "";
-        int border_Characters = 40;
+        int border_Characters = 52;
         // Declare and initialize variables to hold student/course information
         String student_Name = "Todd Parker";
         String student_Email = "todd.i.parker@maine.edu";
