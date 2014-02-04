@@ -15,7 +15,9 @@
 
 package atm_gui_pa1_cis314;
 
-public class Account
+import java.io.Serializable;
+
+public class Account implements Serializable
 {
     private int accountNumber; // account number
     private int pin; // PIN for authentication

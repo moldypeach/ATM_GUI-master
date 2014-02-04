@@ -16,20 +16,13 @@
 
 package atm_gui_pa1_cis314;
 
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Component;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Insets;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JTextArea;
-import javax.swing.BorderFactory;
+import java.io.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class ATM extends JFrame
+public class ATM extends JFrame implements Serializable
 {
     private boolean userAuthenticated; // whether user is authenticated
     private int currentAccountNumber; // current user's account number
@@ -41,6 +34,7 @@ public class ATM extends JFrame
     private GridBagLayout layout; // layout of frame
     private GridBagConstraints constraints; // Constraints of layout
     private Student_Sig_Block sig; // create signature block object
+    private ObjectOutputStream output; // outputs data to file
     
     // constants corresponding to main menu options
     private static final int BALANCE_INQUIRY = 1;
@@ -184,6 +178,40 @@ public class ATM extends JFrame
         return temp; // return the newly created object
     } // end method createTransaction
     
+    // method to set constraints on GridBagLayout
+    private void addComponent( Component component, int row, int col, int colSpan, int rowSpan)
+    {
+        constraints.gridx = col; // set gridx
+        constraints.gridy = row; // set gridy
+        constraints.gridwidth = colSpan; // set gridwidth
+        constraints.gridheight = rowSpan; // set gridheight
+        layout.setConstraints( component, constraints ); // set constraints
+        add( component ); // add component
+    } // end method addComponent
+    
+    // all ATM state information to be saved
+    public void saveATM()
+    {
+        // open file
+        try
+        {
+            output = new ObjectOutputStream( new FileOutputStream( "atm.ser") );
+            writeStateInfo();
+        }
+        catch ( IOException ioException )
+        {
+            screen.resetDisplay();
+            screen.displayMessageLine( "Error opening file." );
+            screen.pause( 3 );
+        } // end catch
+    } // end saveATM method
+    
+    // add Account records to file
+    public void writeStateInfo()
+    {
+        
+    } // end writeStateInfo() method
+    
     // Setup the GUI components
     public void initFrame()
     {
@@ -282,26 +310,15 @@ public class ATM extends JFrame
         keypadPanel.setBorder( BorderFactory.createCompoundBorder( new EmptyBorder( 5,5,5,5), BorderFactory.createLineBorder( Color.GRAY, 4, false )));
         keypadPanel.setBackground( new Color(38, 38, 38) );
         constraints.fill = GridBagConstraints.BOTH;
-        constraints.weightx = 0.4;
+        constraints.weightx = 0;
         constraints.weighty = 0;
         addComponent(keypadPanel, 1, 3, 1, 5);        
         
         ATM.this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         ATM.this.getContentPane().setBackground( Color.BLACK );
-        ATM.this.setSize( 1024, 768 ); // set frame size
-        ATM.this.setResizable( true );        
+        ATM.this.setSize( 800, 600 ); // set frame size
+        ATM.this.setResizable( false );        
         ATM.this.setVisible( true ); // display frame
-//        ATM.this.pack();
-    } // end initFrame
+    } // end initFrame    
     
-    // method to set constraints on GridBagLayout
-    private void addComponent( Component component, int row, int col, int colSpan, int rowSpan)
-    {
-        constraints.gridx = col; // set gridx
-        constraints.gridy = row; // set gridy
-        constraints.gridwidth = colSpan; // set gridwidth
-        constraints.gridheight = rowSpan; // set gridheight
-        layout.setConstraints( component, constraints ); // set constraints
-        add( component ); // add component
-    } // end method addComponent
 } // end class ATM

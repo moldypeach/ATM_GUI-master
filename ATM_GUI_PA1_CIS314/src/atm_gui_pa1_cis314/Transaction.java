@@ -14,7 +14,9 @@
 
 package atm_gui_pa1_cis314;
 
-public abstract class Transaction
+import java.io.*;
+
+public abstract class Transaction implements Serializable
 {
     private int accountNumber; // indicates account involved
     private Screen screen; // ATM's screen
@@ -48,4 +50,5 @@ public abstract class Transaction
     
     // perform the transaction (overridden by each subclass)
     abstract public void execute();
+    
 } // end class Transaction

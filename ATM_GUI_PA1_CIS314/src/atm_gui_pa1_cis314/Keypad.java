@@ -19,15 +19,12 @@
 
 package atm_gui_pa1_cis314;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.GridLayout; // reference page 613
-import javax.swing.JButton;
-import javax.swing.JPanel;
+import java.io.Serializable;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
-public class Keypad extends JPanel
+public class Keypad extends JPanel implements Serializable
 {
     private int input; // value entered from keypad
     private String response; // temp variable to hold GUI input

@@ -8,7 +8,9 @@
  */
 package atm_gui_pa1_cis314;
 
-public class Student_Sig_Block
+import java.io.Serializable;
+
+public class Student_Sig_Block implements Serializable
 {
     // overrides superclass class Object's toString method
     @Override

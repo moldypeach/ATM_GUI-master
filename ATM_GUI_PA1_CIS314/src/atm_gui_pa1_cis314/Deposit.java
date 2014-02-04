@@ -15,7 +15,9 @@
 
 package atm_gui_pa1_cis314;
 
-public class Deposit extends Transaction
+import java.io.Serializable;
+
+public class Deposit extends Transaction implements Serializable
 {
     private double amount; // amount to deposit
     private Keypad keypad; // reference to keypad

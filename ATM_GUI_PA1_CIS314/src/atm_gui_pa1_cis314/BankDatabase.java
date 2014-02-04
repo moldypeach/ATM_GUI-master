@@ -15,7 +15,9 @@
 
 package atm_gui_pa1_cis314;
 
-public class BankDatabase
+import java.io.Serializable;
+
+public class BankDatabase implements Serializable
 {
     private Account[] accounts; // array of Accounts
     
@@ -78,4 +80,5 @@ public class BankDatabase
         {
             getAccount( userAccountNumber ).debit( amount );
         } // end method debit
+        
 } // end class BankDatabase

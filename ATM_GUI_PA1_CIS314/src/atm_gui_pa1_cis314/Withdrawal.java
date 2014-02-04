@@ -16,7 +16,9 @@
 
 package atm_gui_pa1_cis314;
 
-public class Withdrawal extends Transaction
+import java.io.Serializable;
+
+public class Withdrawal extends Transaction implements Serializable
 {
     private int amount; // amount to withdraw
     private Keypad keypad; // reference to keypad

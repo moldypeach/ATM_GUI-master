@@ -14,11 +14,11 @@
 
 package atm_gui_pa1_cis314;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JButton;
+import java.io.Serializable;
+import java.awt.event.*;
+import javax.swing.*;
 
-public class DepositSlot
+public class DepositSlot implements Serializable
 {
     private JButton depositButton; // button to deposit cash
     private boolean depositCompleted; // flag to determine if deposit was completed

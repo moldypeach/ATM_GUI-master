@@ -20,10 +20,11 @@
 
 package atm_gui_pa1_cis314;
 
+import java.io.Serializable;
 import java.awt.Color;
 import javax.swing.JTextArea;
 
-public class Screen
+public class Screen implements Serializable
 {
     private JTextArea textArea; // textarea to display output
     

@@ -15,11 +15,11 @@
 
 package atm_gui_pa1_cis314;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JButton;
+import java.io.Serializable;
+import java.awt.event.*;
+import javax.swing.*;
 
-public class CashDispenser extends JButton
+public class CashDispenser extends JButton implements Serializable
 {
     private JButton dispenserButton; // button to dispense cash
     // the default inital number of bills in the cash dispenser

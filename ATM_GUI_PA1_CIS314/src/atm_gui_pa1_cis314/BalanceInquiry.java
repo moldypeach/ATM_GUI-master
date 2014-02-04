@@ -15,7 +15,9 @@
 
 package atm_gui_pa1_cis314;
 
-public class BalanceInquiry extends Transaction
+import java.io.Serializable;
+
+public class BalanceInquiry extends Transaction implements Serializable
 {
     // BalanceInquiry constructor
     public BalanceInquiry( int userAccountNumber, Screen atmScreen, BankDatabase atmBankDatabase )
